@@ -1,5 +1,19 @@
 # プロ演TA自動採点システム
 
+## 環境構築
+
+- 1から始める
+
+```
+git clone https://github.com/sugawa197203/proen-ta
+```
+
+- 新しい変更を取り込む
+
+```
+git pull origin main
+```
+
 ## 採点手順
 
 - 初期化
