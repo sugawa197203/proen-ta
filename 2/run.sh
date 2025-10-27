@@ -8,7 +8,7 @@ SOLVE_C="solve.c"
 TARGET_C="target.c"
 SOLVE_BIN="solve"
 TARGET_BIN="target"
-COMPILER="clang"
+COMPILER="gcc"
 
 # ディレクトリが存在するか確認
 if [ ! -d "$INPUT_DIR" ]; then
