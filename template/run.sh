@@ -8,6 +8,7 @@ SOLVE_C="solve.c"
 TARGET_C="target.c"
 SOLVE_BIN="solve"
 TARGET_BIN="target"
+COMPILER="clang"
 
 # ディレクトリが存在するか確認
 if [ ! -d "$INPUT_DIR" ]; then
@@ -35,7 +36,7 @@ rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 
 # 想定解をコンパイル
-gcc "$SOLVE_C" -o "$SOLVE_BIN"
+$COMPILER "$SOLVE_C" -o "$SOLVE_BIN"
 if [ $? -ne 0 ]; then
     echo "エラー: '$SOLVE_C' のコンパイルに失敗しました。"
     exit 1
@@ -56,7 +57,7 @@ echo -e "\n--- 採点対象コードを検証中 ---"
 all_passed=true
 
 # 採点対象コードをコンパイル
-gcc "$TARGET_C" -o "$TARGET_BIN"
+$COMPILER "$TARGET_C" -o "$TARGET_BIN"
 if [ $? -ne 0 ]; then
     echo "エラー: '$TARGET_C' のコンパイルに失敗しました。"
     exit 1
