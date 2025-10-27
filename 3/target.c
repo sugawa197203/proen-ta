@@ -1,19 +1,18 @@
-#include<stdio.h>
-
-int counter = 0;
-
-int fibonacci(int n) {
-    counter++;
-    if (n <= 0) return 0;
-    if (n == 1) return 1;
-    if (n == 2) return 1;
-    return fibonacci(n - 1) + fibonacci(n - 2);
+#include <stdio.h>
+int count;
+int Func(int n){
+    count++;
+    if(n<=2){
+        return 1;
+    }else{
+        return Func(n-1)+Func(n-2);
+    }
 }
 
-int main() {
-    int n;
-    scanf("%d", &n);
-    int result = fibonacci(n);
-    printf("%d %d\n", result, counter);
+int main(void){
+    int n,result;
+    scanf("%d",&n);
+    result=Func(n);
+    printf("%d %d\n",result,count);
     return 0;
 }
