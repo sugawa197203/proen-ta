@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define SIZE 10
+#define SIZE 30
 #define LENGTH 30 
 
 void strSort(char data[SIZE][LENGTH+1], int size){
