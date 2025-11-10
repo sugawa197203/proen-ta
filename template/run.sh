@@ -44,6 +44,10 @@ fi
 
 # inputディレクトリ内の各ファイルに対し、想定解を実行して出力を保存
 for input_file in "$INPUT_DIR"/*; do
+    # .txt ファイルのみ処理するので、それ以外はスキップ
+    if [[ "$input_file" != *.txt ]]; then
+        continue
+    fi
     if [ -f "$input_file" ]; then
         filename=$(basename "$input_file")
         output_file="$OUTPUT_DIR/${filename%.*}.out"
@@ -65,6 +69,10 @@ fi
 
 # inputディレクトリ内の各ファイルと対応するoutputディレクトリ内のファイルでdiffを実行
 for input_file in "$INPUT_DIR"/*; do
+    # .txt ファイルのみ処理するので、それ以外はスキップ
+    if [[ "$input_file" != *.txt ]]; then
+        continue
+    fi
     if [ -f "$input_file" ]; then
         filename=$(basename "$input_file")
         expected_output="$OUTPUT_DIR/${filename%.*}.out"
